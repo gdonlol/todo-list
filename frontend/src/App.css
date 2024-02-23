@@ -1,0 +1,325 @@
+body {
+  margin: 0px;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  font-size:14px;
+  color: rgba(255, 255, 255, 0.81);
+}
+a {
+  color: #2F81F7;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: #10151c;
+}
+::-webkit-scrollbar-thumb {
+  background: #262C32;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2B3037; 
+}
+.editable{
+  outline: none
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #30363D; 
+  margin: 10px 0px 26px 0px;
+}
+
+/* 
+=================================
+MAIN DIVS AND STUFF
+=================================
+*/
+
+.app{
+  display: flex;
+  flex-direction: row;
+}
+.clickable{
+  border: none;
+  background-color: #010409;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  font-size:14px;
+  transition: background-color 0.2s;
+  width: 96%;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+  border-radius: 4px;
+}
+.clickable:hover{
+  background-color: #171B20;
+  cursor: pointer;
+}
+.sidebar, .header {
+  position: sticky;
+  top: 0;
+}
+.error-notif{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px 22px 12px 22px;
+  background-color: rgba(255, 62, 62, 0.129);
+  border: 1px solid #792E2E;
+  border-radius: 6px;
+  color: #FFF;
+}
+.error-notif-close{
+  color: #F85149;
+  font-size: 20px;
+  margin-left: 8px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 
+=================================
+CSS FOR SIDEBAR STUFF
+=================================
+*/
+
+.sidebar{
+  background-color: #010409;
+  color: white;
+  border-right: 2px solid #21262D;
+  width: 240px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.utils-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.lists-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.btn-text{
+  display: inline;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.btn-text p{
+  display:inline;
+  padding-left: 12px;
+  line-height: 27px;
+}
+
+/* 
+=================================
+MAIN DIV CSS
+=================================
+*/
+
+.main{
+  background-color: #0D1117;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  background-color: #0D1117;
+  height: 45px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 18px 0px 18px;
+  font-weight: 400;
+}
+/* 
+=================================
+CONTENT CSS
+=================================
+*/
+.content{
+  display:flex;
+  flex-direction: column;
+  flex:1;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 28px 0px 28px 0px;
+  width:60%;
+  align-self: center;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  bottom: 0;
+}
+.content > p, i{
+  font-weight: 400;
+}
+.content > h1{
+  margin-bottom:0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 40px;
+}
+.item{
+  font-weight: 400;
+  width: 100%;
+  padding: 2px;
+  border-radius: 8px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item:hover{
+  background-color: #171B22;
+}
+.checkbox{
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+  margin-right: 8px;
+  background: none;
+  border: none;
+  font-size: 19px;
+}
+.item-stuff{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+.delete{
+  width: 32px;
+  height: 32px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 8px;
+  margin-right: 8px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #9B9B9B;
+  border-radius: 4px;
+}
+.delete:hover{
+  background-color: #25292D;
+}
+.item-done{
+  text-decoration: line-through;
+  color: #6E7681;
+  font-style: italic;
+}
+.input-container{
+  background-color: #0D1117;
+  position: sticky;
+  bottom:0;
+  height:72px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:10px;
+}
+.input-bar{
+  display:flex;
+  border: 1px solid #30363D;
+  background-color: #0D1117;
+  width: 60%;
+  height: 48px;
+  border-radius: 16px; 
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 16px 0px 16px;
+  margin-bottom: 4px;
+}
+.item-input{
+  border: none;
+  background: none;
+  outline: none;
+  color: #fff;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  font-weight: 400;
+  width: 95%;
+}
+.item-input-btn{
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  background-image: url('plus.png');
+  background-size: cover;
+  background-color: transparent;
+}
+/* 
+=================================
+LOGIN PAGE
+=================================
+*/
+.login{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 72px;
+  background-color: #0D1117;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+.login > h1{
+  font-weight: 300;
+}
+.form-container{
+  background-color: #161B22;
+  border-radius: 4px;
+  border: 1px solid #21262D;
+  display:flex;
+  flex-direction: column;
+  font-weight: 400;
+  align-items: center;
+  padding: 16px
+}
+.form-container input{
+  background-color: #0D1117;
+  border: 1px solid #30363D;
+  color: rgba(255, 255, 255, 0.81);
+  border-radius: 6px;
+  width: 100%;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  font-weight: 400;
+  height: 28px;
+  width: 269px;
+  margin: 8px 0px 16px 0px;
+}
+.login-btn{
+  border: none;
+  background-color: #238636;
+  color: #fff;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  font-weight: 400;
+  width: 100%;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 6px;
+}
