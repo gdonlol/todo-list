@@ -15,7 +15,10 @@ Basic task management application created using the MERN stack
 5. Add secret to .env using `SECRET='<any string>'` for account token authentication system
 6. Run with `npm start`
 
-First solo fullstack MERN app :)
+## Demo:
+https://github.com/gdonlol/todo-list/assets/66427508/b3114910-66bd-4738-8303-59174057c55b
+
+My first solo fullstack MERN app :)
 Very bare-bones features and it could definitely do better security wise. Maybe I'll update it in the future but I have so many other project ideas that are a lot more interesting than the good old todo list 😂
 
 Updates:
