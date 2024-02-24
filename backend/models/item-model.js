@@ -4,10 +4,16 @@ const itemSchema = new mongoose.Schema({
     text: {
         type: String,
         required: true,
+        maxLength: [100, "Item text is too long"]
     },
     done: {
         type: Boolean,
         default: false
+    },
+    author:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"User",
+        required: true
     }
 })
 itemSchema.set("toJSON", {

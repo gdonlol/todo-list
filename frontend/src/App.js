@@ -14,45 +14,81 @@ function App() {
 
   //LIST STUFF
   const fetchAllLists = async () => {
-    setLists(await userService.getAllLists(user.username))
+    try{
+      setLists(await userService.getAllLists(user.username, user.token))
+    }catch(e){
+      alert(e.response.data.error);
+    }
   }
   const listSwitchFn = async (id) => {
-      setList(await userService.getListContent(user.username, id))
+    try{
+      setList(await userService.getListContent(user.username, id, user.token))
+    }catch(e){
+      alert(e.response.data.error)
+    }
   }
   const addListFn = async () => {
-    setList(await userService.addList(user.username))
-    setLists(await userService.getAllLists(user.username))
+    try{
+      setList(await userService.addList(user.username, user.token))
+      setLists(await userService.getAllLists(user.username, user.token))
+    }catch(e){
+      alert(e.response.data.error)
+    }
   }
   const deleteListFn = async (e, id) => {
     e.stopPropagation();
-    await userService.deleteList(user.username, id)
-    setLists(await userService.getAllLists(user.username))
-    setList(null)
+    try{
+      await userService.deleteList(user.username, id, user.token)
+      setLists(await userService.getAllLists(user.username, user.token))
+      setList(null)
+    }catch(e){
+      alert(e.response.data.error)
+    }
   }
 
   //TITLE AND DESC EDITING
   const handleTitleFn = async (value) => {
-    setList(await userService.updateList(user.username, list.id, {title: value}))
-    fetchAllLists()
+    try{
+      setList(await userService.updateList(user.username, list.id, {title: value}, user.token))
+      fetchAllLists()
+    }catch(e){
+      alert(e.response.data.error)
+    }
   }
   const handleDescFn = async (value) => {
-    setList(await userService.updateList(user.username, list.id, {desc: value}))
-    fetchAllLists()
+    try{
+      setList(await userService.updateList(user.username, list.id, {desc: value}, user.token))
+      fetchAllLists()
+    }catch(e){
+      alert(e.response.data.error)
+    }
   }
   
   //ITEM TRANSACTIONS
   const handleDone = async (newData) => {
-    const response = await userService.changeItem(user.username, list.id, newData)
-    return response.done
+    try{
+      const response = await userService.changeItem(user.username, list.id, newData, user.token)
+      return response.done
+    }catch(e){
+      alert(e.response.data.error)
+    }
   }
   const handleAdd = async (textData) => {
     if (list === null){
       return
     }
-    setList(await userService.addItem(user.username, list.id, {text: textData}))
+    try{
+      setList(await userService.addItem(user.username, list.id, {text: textData}, user.token))
+    }catch(e){
+      alert(e.response.data.error)
+    }
   }
   const handleDelete = async (id) => {
-    setList(await userService.deleteItem(user.username, list.id, id))
+    try{
+      setList(await userService.deleteItem(user.username, list.id, id, user.token))
+    }catch(e){
+      alert(e.response.data.error)
+    }
   }
 
   //USE EFFECT

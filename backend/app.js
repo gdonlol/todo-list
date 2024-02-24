@@ -26,6 +26,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static('build'))
 
+app.use('/api/user', middleware.tokenExtractor)
 app.use('/api/user', userRouter)
 app.use('/api/auth/signup', signupRouter)
 app.use('/api/auth/login', loginRouter)
