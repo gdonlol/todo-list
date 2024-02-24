@@ -8,12 +8,12 @@ Basic task management application created using the MERN stack
 - Account authentication system
 
 ## Usage:
-1. Clone repository
-2. Install dependencies in both frontend and backend `npm install`
-3. Create .env file in backend
-4. In .env, connect your MongoDB database cluster url in .env using `MONGOURL='<URL HERE>'`
-5. Add secret to .env using `SECRET='<any string>'` for account token authentication system
-6. Run with `npm start`
+1. **Clone repository**: Start by cloning the repository to your local machine using Git.
+2. **Install dependencies**: Navigate to both the frontend and backend directories in your terminal or command prompt, then run `npm install` to install the required dependencies for each part of the application.
+3. **Create environment file**: In the backend directory, create a file named `.env`. This file will store sensitive information such as database connection URLs and secret keys.
+4. **Configure MongoDB URL**: Inside the `.env` file, set up a MongoDB connection URL using the format `MONGOURL='<URL HERE>'`. Replace `<URL HERE>` with the actual URL of your MongoDB database cluster.
+5. **Set secret key**: Also in the `.env` file, define a secret key for use in account token authentication. Use the format `SECRET='<any string>'`, replacing `<any string>` with a string of your choice.
+6. **Start the application**: Once you've configured the environment variables, you can start the application by running `npm start` in the root directory of the project. This command will launch both the frontend and backend servers, allowing you to access the application in your web browser.
 
 ## Demo:
 https://github.com/gdonlol/todo-list/assets/66427508/b3114910-66bd-4738-8303-59174057c55b
