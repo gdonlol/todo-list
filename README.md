@@ -7,6 +7,9 @@ Basic task management application created using the MERN stack
 - Edit list name/desc
 - Account authentication system
 
+## Demo:
+https://github.com/gdonlol/todo-list/assets/66427508/b3114910-66bd-4738-8303-59174057c55b
+
 ## Usage:
 1. **Clone repository**: Start by cloning the repository to your local machine using Git.
 2. **Install dependencies**: Navigate to both the frontend and backend directories in your terminal or command prompt, then run `npm install` to install the required dependencies for each part of the application.
@@ -14,9 +17,6 @@ Basic task management application created using the MERN stack
 4. **Configure MongoDB URL**: Inside the `.env` file, set up a MongoDB connection URL using the format `MONGOURL='<URL HERE>'`. Replace `<URL HERE>` with the actual URL of your MongoDB database cluster.
 5. **Set secret key**: Also in the `.env` file, define a secret key for use in account token authentication. Use the format `SECRET='<any string>'`, replacing `<any string>` with a string of your choice.
 6. **Starting the application**: Once you've configured the environment variables, you can start the server in the backend by running `npm start` in the backend directory of the project. Backend uses the bundled version (from `npm run build`) of the frontend, in the /build folder. 
-
-## Demo:
-https://github.com/gdonlol/todo-list/assets/66427508/b3114910-66bd-4738-8303-59174057c55b
 
 My first solo fullstack MERN app :)
 Very bare-bones features and it could definitely do better security wise. Maybe I'll update it in the future but I have so many other project ideas that are a lot more interesting than the good old todo list 😂
